@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero API</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="../customize.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+</head>
+<body>
+    <br><br><br><br>
+    <div class="container bg-info">
+      <div class="d-sm-flex align-items-center justify-content-between">
+      <div class="col-sm-4">
+        <h1>Superhero API</h1>
+        <div>
+            <form action="/heroform" method="post">
+                <div class="input-group mb-3">
+                    <input type="text" id="heroName" name="heroName" class="form-control" placeholder="Superhero Name">
+                    <input class="btn btn-outline-secondary" type="submit" id="btn" value="SEARCH">
+                  </div>
+            </form>
+        </div>
+        <div class="row">
+
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Aliases: </h5>
+                  <p class="card-text">
+                    <ul>
+                        <% if (hero_arr) { %>
+        
+                            <% locals.hero_arr.forEach(function(hero_arr) { %>
+                                <li>
+                                    <strong><%= hero_arr %></strong>
+                                </li>
+                            <% }); %>
+                           
+                        <% } %>
+                        
+                    </ul>
+                  </p>
+                </div>
+              </div>
+            </div>
+</div>
+
+        <div class="col-sm-6">
+            <div class="jumbotron">
+                <img src= "<%=hero_img%>"  class="img-fluid img-thumbnail" class="img-fluid">
+            </div>
+        </div>
+  <style>
+    body{
+    background-image: url('https://m.media-amazon.com/images/I/81L0HoszayL._AC_SL1500_.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    }
+  </style>
+    <script src="index.js">
+      var data = json.parse(hero_arr)
+      
+    </script>
+
+</body>
+</html>
